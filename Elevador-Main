@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+  Elevador elevador = new Elevador(10,5);
+    
+    System.out.println("informe quantas pessoas vão entrar no elevador");
+    int Entrada = sc.nextInt();
+    elevador.entrar(Entrada);
+    
+    System.out.println("Quantos andares deseja subir?");
+    int Subir = sc.nextInt();
+    elevador.subir(Subir);
+
+    System.out.println("Quantos andares deseja descer?");
+    int Descer = sc.nextInt();
+    elevador.descer(Descer);
+
+    System.out.println("informe quantas pessoas vão sair no elevador");
+    int Saida = sc.nextInt();
+    elevador.sair(Saida);
