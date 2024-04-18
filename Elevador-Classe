@@ -1,0 +1,103 @@
+public class Elevador {
+  int andarAtual;
+  int totalAndares;
+  int capacidade;
+  int pessoas;
+  int subir;
+  int descer;
+
+  // Criar metodo construtor
+  public Elevador(int capacidade, int totalAndares){
+    this.capacidade = capacidade;
+    this.totalAndares = totalAndares;
+    this.andarAtual = 0;
+    this.pessoas = 0;
+  }
+
+  public void inicializarElevador(int capacidade, int totalAndares){
+    this.capacidade = capacidade;
+    this.totalAndares = totalAndares;
+    this.andarAtual = 0;
+    this.pessoas = 0;
+  }
+  //Método para entrar um determinado número de pessoas
+  public void entrar(int entrando){
+    if(this.pessoas + entrando <= this.capacidade){
+        pessoas += entrando;
+      System.out.println(entrando + " pessoas entraram. Total agora: " + pessoas);
+    }else{
+      System.out.println("Não há espaço suficiente! Capacidade máxima: " + capacidade + ", Pessoas Presentes: " + pessoas);
+    }
+  }
+  
+  //public void entrar(){
+    //if(this.pessoas < this.capacidade){
+      //this.pessoas++;
+      //System.out.println("Uma pessoa entrou. Total agora: " + pessoas);
+    //}
+    //else{
+     //System.out.println("Elevador cheio! Capacidade máxima: " + capacidade);
+    //}
+ 
+  //}
+  //Método para sair um determinado número de pessoas
+  public void sair(int saindo){
+    if(this.pessoas <= saindo){
+      this.pessoas -= saindo;
+      System.out.println(saindo + " pessoas saíram. Total agora: " + pessoas);
+    }else{
+      System.out.println("Elevador vazio! Pessoas Presentes: " + pessoas);
+    }
+  }
+  //public void sair(){
+    //if(this.pessoas > 0){
+      //this.pessoas--;
+      //System.out.println("Total agora: " + pessoas);
+    //}
+    //else{
+      //System.out.println("Elevador vazio");
+    //}
+  //}
+  //Método para subir um determinado número de andares
+  public void subir(int subir){
+    if(this.andarAtual + subir <= this.totalAndares){
+      this.andarAtual += subir;
+      System.out.println("Subindo " + subir + " andares. Andar atual: " + andarAtual);
+    }
+    else{
+      System.out.println("Não é possível subir mais andares");
+    }
+  }
+  //public void subir(){
+    //if(this.andarAtual < this.totalAndares){
+      //this.andarAtual++;
+      //System.out.println("Subindo para o andar: " + andarAtual);
+    //}
+    //else{
+      //System.out.println("Já está no último andar.");
+    //}
+  //}
+  
+  // Método para descer um determinado número de andares
+  public void descer(int descer){
+    if(this.andarAtual - descer >= 0){
+      this.andarAtual -= descer;
+      System.out.println("Descendo " + descer + " andares. Andar atual: " + andarAtual);
+    }
+    else{
+      System.out.println("Este elevador tem o total de "+ totalAndares + " andares");
+    }
+  }
+  
+  //public void descer(){
+    //if(this.andarAtual > 0){
+      //this.andarAtual--;
+      //System.out.println("Descendo para o andar: " + andarAtual);
+      //} else {
+          //System.out.println("Já está no térreo!");
+    //}
+  //}
+  
+  
+  
+}
